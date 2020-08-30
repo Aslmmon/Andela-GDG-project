@@ -29,7 +29,7 @@ private val sLogLevel =
 //    .build()
 //
 
-private const val baseUrl = "https://ec2-52-47-205-231.eu-west-3.compute.amazonaws.com:8102"
+private const val baseUrl = "https://gadsapi.herokuapp.com"
 
 
 private fun getLogInterceptor() = HttpLoggingInterceptor().apply { level = sLogLevel }

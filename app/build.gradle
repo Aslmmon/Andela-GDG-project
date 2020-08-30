@@ -42,5 +42,7 @@ dependencies {
     implementation koin.values()
     implementation coroutine.values()
     implementation networkDependencies.values()
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-beta01"
+
 
 }

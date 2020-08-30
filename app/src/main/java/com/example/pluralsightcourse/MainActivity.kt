@@ -5,6 +5,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.pluralsightcourse.common.Navigation
 import com.example.pluralsightcourse.common.base.BaseActivity
 import com.example.pluralsightcourse.features.LeadersFragment
 import com.google.android.material.tabs.TabLayoutMediator
@@ -17,8 +18,8 @@ class MainActivity : BaseActivity() {
         pager.adapter = object : FragmentStateAdapter(this) {
             override fun createFragment(position: Int): Fragment {
                 return when (position) {
-                    0 -> LeadersFragment()
-                    1 ->  LeadersFragment()
+                    0 -> LeadersFragment.newInstance("1")
+                    1 -> LeadersFragment.newInstance("2")
                     else -> LeadersFragment()
                 }
             }
@@ -35,6 +36,10 @@ class MainActivity : BaseActivity() {
                 else -> "New"
             }
         }.attach()
+
+        custom_toolbar.submit.setOnClickListener {
+            Navigation.goToSubmitActivity(this)
+        }
     }
 
     override fun provideLayout() = R.layout.activity_main

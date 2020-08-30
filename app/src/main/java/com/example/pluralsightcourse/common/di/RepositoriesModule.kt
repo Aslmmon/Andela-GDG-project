@@ -1,6 +1,7 @@
 package com.example.pluralsightcourse.common.di
 
 
+import com.example.pluralsightcourse.data.repo.LeadersRepo
 import org.koin.dsl.module
 
 /**
@@ -8,5 +9,5 @@ import org.koin.dsl.module
  */
 
 val repositoriesModule = module {
-  //  factory{ HomeRepo(get(),get(),get()) }
+    single{ LeadersRepo(get()) }
 }

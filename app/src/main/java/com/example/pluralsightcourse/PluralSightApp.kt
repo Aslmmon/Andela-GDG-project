@@ -14,9 +14,6 @@ class PluralSightApp : Application() {
 
     companion object {
         lateinit var context: Context
-        fun getAppContext(): Context {
-            return context
-        }
     }
 
     override fun onCreate() {

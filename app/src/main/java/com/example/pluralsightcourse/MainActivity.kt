@@ -1,13 +1,11 @@
 package com.example.pluralsightcourse
 
 import android.os.Bundle
-import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.pluralsightcourse.common.Navigation
 import com.example.pluralsightcourse.common.base.BaseActivity
-import com.example.pluralsightcourse.features.LeadersFragment
+import com.example.pluralsightcourse.features.leaders_fragment.LeadersFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_main.*
 

@@ -27,9 +27,9 @@ ext {
 
 
     imageslibraries = [
-            picasso : "com.squareup.picasso:picasso:$picassoVersion",
-            hodenhof: "de.hdodenhof:circleimageview:${circleImage}",
-            glide   : "com.github.bumptech.glide:glide:4.10.0"
+            picasso : "com.squareup.picasso:picasso:$picassoVersion"
+//            hodenhof: "de.hdodenhof:circleimageview:${circleImage}",
+//            glide   : "com.github.bumptech.glide:glide:4.10.0"
     ]
     coroutine = [
             // Coroutines

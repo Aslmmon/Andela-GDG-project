@@ -1,5 +1,6 @@
 package com.example.pluralsightcourse.features.leaders_fragment.adapter
 
+import android.annotation.SuppressLint
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import com.example.pluralsightcourse.R
 import com.example.pluralsightcourse.data.model.LeadersResponse
 import com.example.pluralsightcourse.data.model.LeadersResponseItem
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.leaders_item.view.*
 
 class LeadersRecyclerAdapter(private val interaction: Interaction? = null) :
@@ -62,13 +64,13 @@ class LeadersRecyclerAdapter(private val interaction: Interaction? = null) :
         private val interaction: Interaction?
     ) : RecyclerView.ViewHolder(itemView) {
 
+        @SuppressLint("SetTextI18n")
         fun bind(item: LeadersResponseItem) = with(itemView) {
-            itemView.setOnClickListener {
-                interaction?.onItemSelected(adapterPosition, item)
-            }
             itemView.tv_name.text = item.name
-            itemView.tv_score.text = item.hours.toString()
+            if(item.hours.toString() !=  "0") itemView.tv_score.text =  item.hours.toString() + " " + resources.getString(R.string.learning_hours)
+            else itemView.tv_score.text = item.score.toString() + " " + resources.getString(R.string.skill_iq_score)
             itemView.tv_country.text = item.country
+            Picasso.get().load(item.badgeUrl).into(itemView.iv_content)
 
 
         }

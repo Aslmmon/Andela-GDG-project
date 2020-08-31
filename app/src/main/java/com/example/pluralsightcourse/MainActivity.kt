@@ -26,7 +26,6 @@ class MainActivity : BaseActivity() {
                 return 2
             }
         }
-        pager.isUserInputEnabled = false
         TabLayoutMediator(tab_layout, pager) { tab, position ->
             tab.text = when (position) {
                 0 -> "Learning Leaders"

@@ -43,6 +43,6 @@ dependencies {
     implementation coroutine.values()
     implementation networkDependencies.values()
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-beta01"
-
+    implementation imageslibraries.values()
 
 }

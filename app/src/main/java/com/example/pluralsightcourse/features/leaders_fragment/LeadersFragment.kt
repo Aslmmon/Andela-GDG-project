@@ -54,14 +54,12 @@ class LeadersFragment : Fragment() {
                     observeForLeadersData()
                 }
             }
-            Toast.makeText(activity, parameter, Toast.LENGTH_SHORT).show()
         }
 
     }
 
     private fun observeForLeadersData() {
         leadersViewModel.leaders.observe(this, Observer {
-            Log.i(javaClass.simpleName, it.toString())
             leadersAdapter.submitList(it)
         })
     }

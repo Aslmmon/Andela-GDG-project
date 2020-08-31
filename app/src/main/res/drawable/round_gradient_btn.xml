@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!--  Gradient Bg for listrow -->
+    <solid android:color="@color/colorWhite"/> <!-- this one is ths color of the Rounded Button -->
+    <corners android:radius="50dp"/>
+    <gradient
+        android:startColor="#f0ecd9"
+        android:centerColor="#c99140"
+        android:endColor="#ffa200"
+        android:angle="270" />
+</shape>

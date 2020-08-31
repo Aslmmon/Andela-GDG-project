@@ -6,5 +6,9 @@
     <string name="submit_title">Submit</string>
     <string name="learning_hours">learning hours,</string>
     <string name="skill_iq_score">skill IQ Score,</string>
+    <string name="project_hint">Project on GITHUB(link)</string>
+    <string name="email_address_hint">Email Address</string>
+    <string name="first_name_hint">First Name</string>
+    <string name="last_name_hint">Last Name</string>
 
 </resources>

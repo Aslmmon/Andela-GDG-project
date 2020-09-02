@@ -70,6 +70,7 @@
         android:layout_marginTop="50dp"
         android:background="@drawable/round_gradient_btn"
         android:text="Submit"
+        android:id="@+id/btn_submit_"
         android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

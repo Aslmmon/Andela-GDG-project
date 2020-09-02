@@ -10,5 +10,9 @@
     <string name="email_address_hint">Email Address</string>
     <string name="first_name_hint">First Name</string>
     <string name="last_name_hint">Last Name</string>
+    <string name="are_you_sure_title">Are you sure ?</string>
+    <string name="yes_title">Yes</string>
+    <string name="submission_successfull_title">Submission Successful</string>
+    <string name="submission_fail_title">Submission not  Successful</string>
 
 </resources>

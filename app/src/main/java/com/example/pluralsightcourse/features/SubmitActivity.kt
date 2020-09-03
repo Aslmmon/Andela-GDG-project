@@ -18,8 +18,11 @@ class SubmitActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
 
         btn_submit_.setOnClickListener {
-           // showConfirmButton()
+            // showConfirmButton()
             showSuccessOrFailure(true)
+        }
+        toolbar.backImg.setOnClickListener {
+            finish()
         }
 
     }
@@ -31,9 +34,10 @@ class SubmitActivity : BaseActivity() {
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
         dialog.setContentView(R.layout.success_failure_layout)
         if (success) {
-            dialog.tv_success_failure_msg.text = resources.getString(R.string.submission_successfull_title)
+            dialog.tv_success_failure_msg.text =
+                resources.getString(R.string.submission_successfull_title)
             dialog.iv_success_failure.setBackgroundResource(R.drawable.ic_tick_icon)
-        }else{
+        } else {
             dialog.tv_success_failure_msg.text = resources.getString(R.string.submission_fail_title)
             dialog.iv_success_failure.setBackgroundResource(R.drawable.ic_warning_icon)
         }

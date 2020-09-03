@@ -12,6 +12,7 @@ import com.example.pluralsightcourse.common.Constants.SKILLS_INTEGER
 import com.example.pluralsightcourse.common.Constants.TYPE_OF_DATA_NEEDED
 import com.example.pluralsightcourse.features.home.adapter.LeadersRecyclerAdapter
 import kotlinx.android.synthetic.main.fragment_leaders.*
+import kotlinx.android.synthetic.main.progress_bar.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
@@ -32,7 +33,6 @@ class LeadersFragment : Fragment() {
     }
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,6 +48,7 @@ class LeadersFragment : Fragment() {
     }
 
     private fun checkWhichDataToBeDisplayed() {
+        showProgress()
         if (arguments != null) {
             val parameter = arguments?.getString(TYPE_OF_DATA_NEEDED);
             when (parameter) {
@@ -57,6 +58,14 @@ class LeadersFragment : Fragment() {
         }
     }
 
+    private fun showProgress() {
+        progress.visibility = View.VISIBLE
+    }
+
+    private fun dismissProgress() {
+        progress.visibility = View.GONE
+    }
+
     private fun initializeRecyclerAdaper() {
         leadersAdapter = LeadersRecyclerAdapter()
         recycler.adapter = leadersAdapter
@@ -64,6 +73,7 @@ class LeadersFragment : Fragment() {
 
     private fun observeForLeadersData() {
         leadersViewModel.leaders.observe(this, Observer {
+            dismissProgress()
             leadersAdapter.submitList(it)
         })
     }

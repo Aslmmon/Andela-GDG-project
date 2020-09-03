@@ -1,12 +1,9 @@
 package com.example.pluralsightcourse.common.base
 
-import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flowOf
@@ -14,9 +11,6 @@ import kotlinx.coroutines.flow.zip
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
-
-import java.net.UnknownHostException
-import java.util.concurrent.TimeoutException
 
 open class BaseViewModel() : ViewModel() {
 

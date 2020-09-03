@@ -3,8 +3,8 @@ package com.example.pluralsightcourse.common
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import com.example.pluralsightcourse.MainActivity
-import com.example.pluralsightcourse.features.SubmitActivity
+import com.example.pluralsightcourse.features.home.MainActivity
+import com.example.pluralsightcourse.features.submit.SubmitActivity
 
 
 object Navigation {
@@ -14,7 +14,7 @@ object Navigation {
     }
 
     fun goToSubmitActivity(ctx: Context) {
-        ctx.startActivity(Intent(ctx,SubmitActivity::class.java))
+        ctx.startActivity(Intent(ctx, SubmitActivity::class.java))
     }
 
 

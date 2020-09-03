@@ -1,15 +1,16 @@
-package com.example.pluralsightcourse.features.leaders_fragment
+package com.example.pluralsightcourse.features.home
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.example.pluralsightcourse.R
-import com.example.pluralsightcourse.features.leaders_fragment.adapter.LeadersRecyclerAdapter
+import com.example.pluralsightcourse.common.Constants.LEADERS_INTEGER
+import com.example.pluralsightcourse.common.Constants.SKILLS_INTEGER
+import com.example.pluralsightcourse.common.Constants.TYPE_OF_DATA_NEEDED
+import com.example.pluralsightcourse.features.home.adapter.LeadersRecyclerAdapter
 import kotlinx.android.synthetic.main.fragment_leaders.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -17,17 +18,19 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class LeadersFragment : Fragment() {
 
     lateinit var leadersAdapter: LeadersRecyclerAdapter
+    val leadersViewModel: LeadersViewModel by viewModel()
+
+
     companion object {
         fun newInstance(typeOfData: String): Fragment {
             val args = Bundle()
-            args.putString("data", typeOfData)
+            args.putString(TYPE_OF_DATA_NEEDED, typeOfData)
             val fragment = LeadersFragment()
             fragment.arguments = args
             return fragment
         }
     }
 
-    val leadersViewModel: LeadersViewModel by viewModel()
 
 
     override fun onCreateView(
@@ -39,23 +42,24 @@ class LeadersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        leadersAdapter = LeadersRecyclerAdapter()
-        recycler.adapter = leadersAdapter
+        initializeRecyclerAdaper()
+        checkWhichDataToBeDisplayed()
+        observeForLeadersData()
+    }
 
+    private fun checkWhichDataToBeDisplayed() {
         if (arguments != null) {
-            val parameter = arguments?.getString("data");
+            val parameter = arguments?.getString(TYPE_OF_DATA_NEEDED);
             when (parameter) {
-                "1" -> {
-                    leadersViewModel.getLeaders()
-                    observeForLeadersData()
-                }
-                "2" -> {
-                    leadersViewModel.getSkilledLeaders()
-                    observeForLeadersData()
-                }
+                LEADERS_INTEGER -> leadersViewModel.getLeaders()
+                SKILLS_INTEGER -> leadersViewModel.getSkilledLeaders()
             }
         }
+    }
 
+    private fun initializeRecyclerAdaper() {
+        leadersAdapter = LeadersRecyclerAdapter()
+        recycler.adapter = leadersAdapter
     }
 
     private fun observeForLeadersData() {

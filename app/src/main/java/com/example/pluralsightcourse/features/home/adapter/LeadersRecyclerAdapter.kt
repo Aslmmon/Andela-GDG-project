@@ -1,4 +1,4 @@
-package com.example.pluralsightcourse.features.leaders_fragment.adapter
+package com.example.pluralsightcourse.features.home.adapter
 
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.RecyclerView
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import com.example.pluralsightcourse.R
-import com.example.pluralsightcourse.data.model.LeadersResponse
 import com.example.pluralsightcourse.data.model.LeadersResponseItem
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.leaders_item.view.*

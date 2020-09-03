@@ -1,7 +1,7 @@
 package com.example.pluralsightcourse.common.di
 
 
-import com.example.pluralsightcourse.features.leaders_fragment.LeadersViewModel
+import com.example.pluralsightcourse.features.home.LeadersViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

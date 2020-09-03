@@ -14,7 +14,6 @@ class CustomToolbar(context: Context, attrs: AttributeSet) : ConstraintLayout(co
     init {
         inflate(context, R.layout.custom_toolbar, this)
         submit = findViewById(R.id.btn_submit)
-        var toolBarTitle: TextView = findViewById(R.id.tv_toolbar_title)
 
 
     }

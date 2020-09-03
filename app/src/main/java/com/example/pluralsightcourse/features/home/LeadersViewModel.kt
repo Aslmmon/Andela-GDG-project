@@ -1,4 +1,4 @@
-package com.example.pluralsightcourse.features.leaders_fragment
+package com.example.pluralsightcourse.features.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

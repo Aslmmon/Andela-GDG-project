@@ -15,5 +15,8 @@
     <string name="submission_successfull_title">Submission Successful</string>
     <string name="submission_fail_title">Submission not  Successful</string>
     <string name="project_submission_title">Project Submission</string>
+    <string name="learning_leaders_title">Project Submission</string>
+    <string name="skills_leaders_title">Skill IQ Leaders</string>
+
 
 </resources>

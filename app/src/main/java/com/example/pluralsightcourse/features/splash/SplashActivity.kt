@@ -1,6 +1,5 @@
-package com.example.pluralsightcourse.features
+package com.example.pluralsightcourse.features.splash
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.pluralsightcourse.R
 import com.example.pluralsightcourse.common.Navigation

@@ -3,6 +3,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     app:cardElevation="5dp"
     app:cardCornerRadius="10dp"
     android:layout_height="wrap_content">
@@ -13,9 +14,9 @@
         android:padding="20dp">
 
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/ic_tick_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            tools:src="@drawable/ic_tick_icon"
             android:id="@+id/iv_success_failure"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -25,11 +26,12 @@
 
         <TextView
             android:id="@+id/tv_success_failure_msg"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/submission_successfull_title"
             android:textColor="@color/colorGray"
-            android:textSize="32sp"
+            android:textSize="22sp"
+            android:gravity="center"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"

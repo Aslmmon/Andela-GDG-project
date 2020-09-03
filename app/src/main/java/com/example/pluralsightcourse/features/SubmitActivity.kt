@@ -26,7 +26,6 @@ class SubmitActivity : BaseActivity() {
 
     private fun showSuccessOrFailure(success: Boolean) {
         val dialog = Dialog(this)
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(true)
 
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));

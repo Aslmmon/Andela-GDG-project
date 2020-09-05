@@ -26,10 +26,14 @@ fun Context.showSuccessOrFailure(success: Boolean) {
 }
 
 
-fun Context.showConfirmButton() {
+fun Context.showConfirmButton(onYesClicked:() -> Unit) {
     val dialog = createDialog(R.layout.confirm_layout)
     dialog.iv_close.setOnClickListener {
         dialog.dismiss()
+    }
+    dialog.btn_yes.setOnClickListener {
+        dialog.dismiss()
+        onYesClicked()
     }
     dialog.show()
 }

@@ -1,5 +1,6 @@
 package com.example.pluralsightcourse.common.base
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,6 +15,9 @@ import java.io.IOException
 
 open class BaseViewModel() : ViewModel() {
 
+    private val _errorResponse = MutableLiveData<String>()
+    val errorResponse: LiveData<String> get() = _errorResponse
+
 
     fun <T> getData(
         function: suspend CoroutineScope.() -> T, dataObserver: MutableLiveData<T>,
@@ -26,6 +30,7 @@ open class BaseViewModel() : ViewModel() {
                 dataObserver.value = function()
             } catch (e: Throwable) {
                 val errorReturned = catchError(e)
+                _errorResponse.postValue(errorReturned)
             } finally {
                 finallyBlock?.invoke(this)
             }
@@ -114,7 +119,6 @@ open class BaseViewModel() : ViewModel() {
         }
         return error
     }
-
 
 
 }

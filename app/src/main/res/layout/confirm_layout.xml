@@ -44,6 +44,7 @@
             android:textColor="@color/colorYellow"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:id="@+id/btn_yes"
             app:cornerRadius="8dp"
             app:layout_constraintEnd_toEndOf="@id/tv_confirm"
             app:layout_constraintStart_toStartOf="@id/tv_confirm"

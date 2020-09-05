@@ -30,6 +30,7 @@ private val sLogLevel =
 //
 
 private const val baseUrl = "https://gadsapi.herokuapp.com"
+private const val baseGoogleFormUrl = "https://docs.google.com/forms/d/e/"
 
 
 private fun getLogInterceptor() = HttpLoggingInterceptor().apply { level = sLogLevel }
@@ -61,8 +62,8 @@ class ErrorLoggingInterceptor() : Interceptor {
     }
 }
 
-fun create8110NetworkClient() =
-    retrofitClient(baseUrl, okHttpClient())
+fun createNetworkClient() = retrofitClient(baseUrl, okHttpClient())
+fun createGoogleNetworkClient() = retrofitClient(baseGoogleFormUrl, okHttpClient())
 
 private fun okHttpClient() = OkHttpClient.Builder()
 
